@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Person, { Button, Header, List } from './Person';
 
 function App() {
+
+  const clickButton = () => {
+    const name = document.getElementById('name')
+    const age = document.getElementById('age')
+    name.style.textTransform = "capitalize"
+    name.style.color = "red"
+    age.style.color = "red"
+    // alert("button clicked")
+  }
+
+  const items = ['Robbert Jr.', 'Cris', 'Scarlet', 'Tom', 'Julia', 'Brat']
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title={"Actor Info"} />
+      <Person name="jonny depp" age="52" />
+      <Button text={"Click!"} onClick={clickButton}
+      />
+      <List items={items} />
+
+    </>
   );
 }
 
